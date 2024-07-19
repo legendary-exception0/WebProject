@@ -63,7 +63,7 @@ section{
     gap: 0.5rem;
     flex-direction: column;
     padding: 0.5rem;
-    border: 1px red solid;
+    /* border: 1px red solid; */
 }
 
 #form label{
@@ -89,4 +89,5 @@ section{
     height: 10%;
     font-size: 1rem;
     align-self: center;
+    margin: 1rem;
 }
