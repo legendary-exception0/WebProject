@@ -14,6 +14,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    /* background-image: url('images/photo_2024-07-19_14-09-50.jpg'); */
 }
 
 header{

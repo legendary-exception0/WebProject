@@ -16,7 +16,7 @@
         <main>
             <div>Membership Table</div>
             <section>
-                <form action="#" method="post" id="form">
+                <form id="form">
                     <label for="member_name">Name:</label>
                     <input type="text" name="member_name" id="member_name">
 
@@ -36,5 +36,36 @@
                 </form>
             </section>
         </main>
+
+        <script>
+                document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = new URLSearchParams(formData);
+
+            fetch('add_member.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(result => {
+                if (result.success) {
+                    alert('Member added successfully');
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                alert('There was a problem with the fetch operation.');
+            });
+        });
+        </script>
     </body>
 </html>
